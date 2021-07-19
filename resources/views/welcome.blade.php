@@ -28,6 +28,14 @@
 
             <hr>
 
+            <div class="row justify-content-center">
+                <div class="col">
+                    <div class="alert alert-info lead">
+                        Invites are currently broken; please be patient we're working on a fix!
+                    </div>
+                </div>
+            </div>
+
             @if ($sent)
                 <div class="alert alert-success" role="alert">
                     <h4 class="alert-heading">Awww yeah!</h4>
