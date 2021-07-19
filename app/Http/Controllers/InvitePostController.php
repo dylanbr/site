@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\InviteRequested;
 use Illuminate\Http\Request;
 
 class InvitePostController extends Controller
@@ -10,15 +9,12 @@ class InvitePostController extends Controller
     public function __invoke(Request $request)
     {
         $this->validate($request, [
-            'email' => 'required|email',
             'code-of-conduct' => 'required',
             'g-recaptcha-response' => 'required|captcha',
         ]);
 
-        event(new InviteRequested($request->input('email')));
+        abort_unless(config('services.slack.invite_link'), 501, 'Someone forgot to add an invite link!');
 
-        return redirect()->route('welcome', [
-            'sent' => true,
-        ]);
+        return redirect(config('services.slack.invite_link'));
     }
 }

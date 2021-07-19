@@ -28,36 +28,19 @@
 
             <hr>
 
-            <div class="row justify-content-center">
-                <div class="col">
-                    <div class="alert alert-info lead">
-                        Invites are currently broken; please be patient we're working on a fix!
-                    </div>
+            {{ Form::errors() }}
+            {{ Form::open([ 'route' => 'invite:post', 'id' => 'jsFormSubmit', ]) }}
+                <div class="my-2">
+                    {{ Form::bsCheckbox('code-of-conduct', 'value', false, [ 'labelValue' => 'Did you read the Code of Conduct?', 'required' => true, ]) }}
                 </div>
-            </div>
 
-            @if ($sent)
-                <div class="alert alert-success" role="alert">
-                    <h4 class="alert-heading">Awww yeah!</h4>
-                    <p>Your invite is on the way.</p>
+                <div class="d-grid">
+                    {!! NoCaptcha::renderJs() !!}
+                    {!! NoCaptcha::displaySubmit('jsFormSubmit', 'Request Invite', [
+                        'class' => 'btn btn-primary',
+                    ]) !!}
                 </div>
-            @else
-                {{ Form::errors() }}
-                {{ Form::open([ 'route' => 'invite:post', 'id' => 'jsFormSubmit', ]) }}
-                    {{ Form::bsEmail('email', null, [ 'placeholder' => 'Email', 'autofocus' => true, 'required' => true, ]) }}
-
-                    <div class="my-2">
-                        {{ Form::bsCheckbox('code-of-conduct', 'value', false, [ 'labelValue' => 'Did you read the Code of Conduct?', ]) }}
-                    </div>
-
-                    <div class="d-grid">
-                        {!! NoCaptcha::renderJs() !!}
-                        {!! NoCaptcha::displaySubmit('jsFormSubmit', 'Request Invite', [
-                            'class' => 'btn btn-primary',
-                        ]) !!}
-                    </div>
-                {{ Form::close() }}
-            @endif
+            {{ Form::close() }}
         </div>
     </div>
 

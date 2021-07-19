@@ -10,9 +10,6 @@ class EventServiceProvider extends ServiceProvider
         \App\Events\AnonReport::class => [
             \App\Listeners\SendAnonReport::class,
         ],
-        \App\Events\InviteRequested::class => [
-            \App\Listeners\SendInvite::class,
-        ],
         \App\Events\ChannelCreated::class => [
             \App\Listeners\NotifyChannelCreated::class,
         ],
