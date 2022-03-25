@@ -26,6 +26,10 @@
                 Be kind. Don't be snarky. Have curious conversation; don't cross-examine. Comments should get more thoughtful and substantive, not less, as a topic gets more divisive.
             </p>
 
+            <div class="text-center">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Ze_C-Fwz_Ec" title="ZATech Slack intro video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
             <hr>
 
             {{ Form::errors() }}
