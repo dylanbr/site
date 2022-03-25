@@ -11,5 +11,6 @@ jobs:
         - uses: n1c/laravel-vapor-action@master
           env:
                 VAPOR_API_TOKEN: ${{ secrets.VAPOR_API_TOKEN }}
+                COMPOSER_SECRET: ${{ secrets.COMPOSER_SECRET }}
           with:
                 args: "deploy production"
