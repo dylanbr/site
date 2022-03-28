@@ -1,15 +1,13 @@
-id: 7066
-name: zatech-site
+id: 29628
+name: zatech-site-new
 environments:
     production:
-        cli-memory: 512
-        concurrency: 1
         domain: zatech.co.za
-        queue-concurrency: 1
         memory: 1024
-        runtime: 'php-7.4:al2'
-        scheduler: false
+        cli-memory: 512
+        runtime: 'php-8.1:al2'
         mail: false
+        scheduler: false
         build:
             - 'COMPOSER_MIRROR_PATH_REPOS=1 composer install --no-dev'
             - 'php artisan event:cache'
