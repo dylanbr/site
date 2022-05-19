@@ -15,7 +15,7 @@
     <div class="row justify-content-center">
         <div class="col-12 col-lg-7 col-xl-5">
             <p>
-                By joining you agree to abide by the <a href="https://github.com/zatech/code-of-conduct">Code of Conduct</a>. Please take a moment to read it.
+                By joining you agree to abide by the <a href="https://github.com/zatech/code-of-conduct">Code of Conduct</a>. Please take a moment to read it and take special note we have specific rules about recruitement.
             </p>
 
             <p>
