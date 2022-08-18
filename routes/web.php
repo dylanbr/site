@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ 'as' => 'welcome', 'uses' => WelcomeController::class, ]);
-Route::post('invite', [ 'as' => 'invite:post', 'uses' => InvitePostController::class, ]);
 
 Route::get('report', [ 'as' => 'report', 'uses' => ReportGetController::class, ]);
 Route::post('report', [ 'as' => 'report:post', 'uses' => ReportPostController::class, ]);

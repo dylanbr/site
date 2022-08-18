@@ -32,19 +32,9 @@
 
             <hr>
 
-            {{ Form::errors() }}
-            {{ Form::open([ 'route' => 'invite:post', 'id' => 'jsFormSubmit', ]) }}
-                <div class="my-2">
-                    {{ Form::bsCheckbox('code-of-conduct', 'value', false, [ 'labelValue' => 'Did you read the Code of Conduct?', 'required' => true, ]) }}
-                </div>
-
-                <div class="d-grid">
-                    {!! NoCaptcha::renderJs() !!}
-                    {!! NoCaptcha::displaySubmit('jsFormSubmit', 'Request Invite', [
-                        'class' => 'btn btn-primary',
-                    ]) !!}
-                </div>
-            {{ Form::close() }}
+            <p>
+                <strong>WANT AN INVITE?</strong> Send an <a href="mailto:invite@zatech.co.za?body={{ $emailBodyTemplate }}">email</a> from an email account you're going to use for a long time (not your work email — you'll be in this community awhile). Include your name, occupation, a brief explanation of why you want to join the Slack, and how you heard about us. Finally, please include a link to your LinkedIn, Twitter, or Medium — any site that demonstrates you're a human. <strong>None</strong> of the above information will be shared with anyone but the admin team.
+            </p>
         </div>
     </div>
 
